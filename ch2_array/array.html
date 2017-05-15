@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ch2 array </title>
+    </head>
+    <body>
+
+
+    <p id="demo"> </p>
+    <br>
+
+    <p id="demo2"></p>
+            <script>
+                    //initial array
+
+                    var jarray = new Array();   //method() 1
+                    var jarray2 = new Array(7); //method() 2 ,  initial 7 element
+                    var jarray3 = new Array( 'aaa' , 'bbb' , 'ccc' , 'ddd' ); //method() 3
+                    document.getElementById("demo").innerHTML = jarray3.length;
+
+
+                    var myarray = [0,2,3,4,5,6,7,8,9];
+                    for( var i = myarray.length ; i >=0 ; i--  ){
+                        myarray[i] =myarray[i-1];
+                    }
+                    myarray[0] = -1;
+
+                    
+                    myarray = []; //clear array item
+
+
+
+                    // showarray1(myarray);
+
+                     function showarray1( arrayin ) {
+                         var result="";
+                         for( var i = 0; i < arrayin.length ; i++ ){
+                              result = result + arrayin[i] + ",";  
+                         }
+                         alert("result= " + result );
+                     }
+
+                     // array of array
+                     var dayoftemp = []
+                     dayoftemp[0] = [1,2,3,4,5];
+                     dayoftemp[1] = [6,7,8,9,10];
+
+                     showarray2(dayoftemp);
+
+                     function showarray2( arrayin){
+                         var result="";
+                         for( var i=0 ; i < arrayin.length ; i++  ){
+                                for(var j=0 ; j < arrayin[i].length; j++  ){
+                                   result = result + arrayin[i][j] + "," ;
+                                }
+                         } 
+
+                         //alert("result= " + result );
+                         //alert("result= " + arrayin.join('-') );
+                     }
+
+                     //concat array = merge
+
+                     var arraya = [0,1,2];
+                     var arrayb = [3,4,5];
+                     var arrayc = [6,7];
+                     var marray =  arraya.concat(arrayb , arrayc );
+
+                     //alert('marray is ' + marray );
+
+                     //loop array
+                     var res="";
+                     marray.forEach( function(x){
+                            res = res + x + ","; 
+                        }
+                     );
+                     //alert("res= " + res);
+                     
+
+           </script>     
+    </body>
+</html>
